@@ -3,23 +3,15 @@
 
 This project is implemented in Python using gRPC. The input files are given in .txt format and the word count operation is performed. 
 
-The medium article for understansing the code better is [Learn gRPC with an Example](https://blog.devgenius.io/learning-grpc-with-an-example-8b4931bd90c8)
-
-
 ## **Description**
 
-MapReduce is a programming model and an associated implementation for processing and generating large data sets. Users specify a map function that processes a key/value pair to generate a set of intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key. Programs written in this functional style are automatically parallelized and executed on a large cluster of commodity machines. The run-time system takes care of the details of partitioning the input data, scheduling the program’s execution across a set of machines, handling machine failures, and managing the required inter-machine communication
+MapReduce is a programming model and an associated implementation for processing and generating large data sets. 
 
 
 # Installation and Usage
 
 ## Setup
 
-Clone this repository:
-
-```bash
-$ git clone https://github.com/divija-swetha/coding-exercise.git
-```
 ## Dependencies
 
 
@@ -87,18 +79,15 @@ In reduce function, glob library is used to extract all files based on a similar
 
 #### **driver.py**
 
-The worker.py file, all the files generated from proto files and python libraries are imported. The Driver class has several functions. The files are loaded and the worker ports are saved in launchDriver and then connections are established with all the workers. For each worker, map operation is sent along with the parameters. This loop continues untill all the input files are mapped. Then reduce operation is performed similar to the map operation. The driver sents task completed update to the client.
+The worker.py file, all the files generated from proto files and python libraries are imported. The Driver class has several functions. The files are loaded and the worker ports are saved in launchDriver and then connections are established with all the workers. 
 
 
 #### **client.py**
 
 The in-built python libraries are imported along with the files generated from the proto file. A connection channel is established with the driver. Inputs and number of reduce operations and worker ports are initialized when the client is launched. Once the word count operation is performed, it exits with a message.
 
-All the connections communicate through gRPC and evry connection is timed. If a worker or driver connection doesn't respond within 10 sec, the connection would be timed out. The driver distributed the work based on the information of worker's state and assigns jobs to the idle workers. If no workers are available, the driver waits and tries again. Once it receives the worker outputs, it aggregates the results.
 
-The input text files are stored in inputs folder. The intermediate files are stored in temp folder and outputs in out folder. The visualization is provided in the video on how the files are created in temp and out during the execution of the code. The video shows the working of the code in visual studio in anaconda environment.
 
-![Video](./Video.mp4)
 
 ## Running the Code
 
@@ -138,11 +127,6 @@ $ python client.py ./inputs 6 4001 4002 4003
 [Map Reduce Tutorial using Python](https://riptutorial.com/hadoop/example/13413/word-count-program-in-java---python-)
 
 [Bloom RPC](https://github.com/bloomrpc/bloomrpc/releases)
-
-# Contributors
-
-- Divija Swetha Gadiraju 
-<!-- -  <dgadiraj@purdue.edu> -->
 
 # License
 [MIT LICENSE](LICENSE)
