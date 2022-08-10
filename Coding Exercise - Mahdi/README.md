@@ -114,10 +114,6 @@ $ python driver.py 4000
 ```python
 $ python client.py ./inputs 6 4001 4002 4003
 ```
-## Additional Information
-
-1. Bloom RPC can be used to visualize the gRPC server client communication.
-2. Stagglers can be handled by various methods like replication, etc.
 
 # References 
 [GRPC Tutorial](https://grpc.io/docs/languages/python/basics/)
@@ -128,6 +124,4 @@ $ python client.py ./inputs 6 4001 4002 4003
 
 [Bloom RPC](https://github.com/bloomrpc/bloomrpc/releases)
 
-# License
-[MIT LICENSE](LICENSE)
 
