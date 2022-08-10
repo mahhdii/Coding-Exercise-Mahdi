@@ -125,4 +125,6 @@ $ python client.py ./inputs 6 4001 4002 4003
 
 [Bloom RPC](https://github.com/bloomrpc/bloomrpc/releases)
 
+https://programmer.ink/think/wordcount-of-mapreduce-implemented-by-python.html
+
 
